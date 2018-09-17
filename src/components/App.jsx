@@ -1,9 +1,10 @@
 import React from 'react';
-import TicketList from './TicketList';
+import TicketList from './KegList';
 import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
-import NewTicketForm from './NewTicketForm';
+import NewKegForm from './NewKegForm';
 import Error404 from './Error404';
+import EditKegForm from './EditKegForm';
 
 function App(){
   return (
@@ -11,7 +12,8 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path='/' component={TicketList} />
-        <Route path='/newticket' component={NewTicketForm} />
+        <Route path='/newkeg' component={NewKegForm} />
+        <Route path='/editkeg/:id' component={EditKegForm} />
         <Route component={Error404} />
       </Switch>
     </div>
